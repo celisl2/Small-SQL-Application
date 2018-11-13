@@ -1,0 +1,1 @@
+go to vs code and download the 'SQL Server (mssql)' extention to format sql
