@@ -36,12 +36,12 @@ CREATE TABLE Payment_Method
 CREATE TABLE Invoice
     (
         Id INT UNISIGNED NOT NULL auto_increment,
-        InvoiceID INT UNSIGNED NOT NULL UNIQUE,
+        InvoiceID INT UNSIGNED NOT NULL UNIQUE auto_increment, --is auto_increment ok here? 
         ServiceStart DATE NOT NULL,
         AcctID INT UNSIGNED NOT NULL,
         SubID INT UNSIGNED NOT NULL,
         PaymentID INT UNSIGNED NOT NULL,
-        PurchaseAmount DECIMAL (6, 2) NOT NULL,
+        PurchaseAmount DECIMAL (4, 2) NOT NULL,
         PRIMARY KEY (Id),
         FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (SubID) REFERENCES Subscription_Type(Id) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -89,7 +89,6 @@ CREATE TABLE Views_Movie
         FOREIGN KEY (MovieID) REFERENCES Movie(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (ProfileID) REFERENCES Profile(Id) ON UPDATE CASCADE ON DELETE CASCADE
     );
--- directed_by_mov table here = kim
 -- INSERTS GO HERE
 INSERT INTO User_Account (Id, Email, FirstName, LastName, Phone, StreetAddress, City, State, Zip, Salt, Hash)
 VALUES (NULL, "emmekemammo-4655@yopmail.com", "Kieran", "Moses", "7632135215", "1069  Cherry Tree Drive", "Jacksonville", "FL", 32204, "9c8ffcdf2b", SHA1("9c8ffcdf2bpassword"));
@@ -161,4 +160,19 @@ VALUES (NULL, NULL);
 INSERT INTO Type_Of (MovieID, GenreID)
 VALUES (NULL, NULL);
 
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20151225, 1, 2, 1, 7.99)
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20130303, 2, 1, 2, 10.99)
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20150419, 3, 2, 3, 7.99)
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20181013, 4, 3, 4, 13.99)
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20171205, 5, 1, 5, 10.99)
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20160618, 6, 1, 6, 10.99)
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20180812, 7, 3, 7, 13.99)                                                                                                                                       
+                                                                                                                                       
 --can do a join on people have subscription types greater than $10 and live in florida
