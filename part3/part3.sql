@@ -36,7 +36,6 @@ CREATE TABLE Payment_Method
 -- things to note, there can only be one auto_increment in each table acording to sql
     -- so if it is a foreign key that points to a primary key just dont put auto_increment
         -- because the primary key will handle the auto_increment
--- invoice table here = kim
 CREATE TABLE Invoice
     (
         Id INT UNISIGNED NOT NULL auto_increment,
@@ -51,7 +50,15 @@ CREATE TABLE Invoice
         FOREIGN KEY (SubID) REFERENCES Subscription_Type(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (PaymentID) REFERENCES Payment_Method(Id) ON UPDATE CASCADE ON DELETE CASCADE
     );
--- profile table here = kim
+CREATE TABLE Profile
+    (
+        Id INT UNSIGNED NOT NULL auto_increment,
+        Name VARCHAR(255) NOT NULL,
+        AcctID INT UNSIGNED NOT NULL,
+        PRIMARY KEY (Id),
+        FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        UNIQUE KEY (AcctID, Name)
+    );
 -- movie table here  = kim
 CREATE TABLE Genre
     (
