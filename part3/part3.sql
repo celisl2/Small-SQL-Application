@@ -28,22 +28,22 @@ CREATE TABLE Payment_Method
         CreditCardNumber VARCHAR(20) NOT NULL UNIQUE,
         CVV VARCHAR(4) NOT NULL,
         ExpirationDate DATE NOT NULL,
-        AcctID INT UNSIGNED NOT NULL,
+        AccID INT UNSIGNED NOT NULL,
         PRIMARY KEY (Id),
-        FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
-        UNIQUE KEY (CreditCardNumber, AcctID)
+        FOREIGN KEY (AccID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        UNIQUE KEY (CreditCardNumber, AccID)
     );
 CREATE TABLE Invoice
     (
         Id INT UNISIGNED NOT NULL auto_increment,
         InvoiceID INT UNSIGNED NOT NULL UNIQUE auto_increment, --is auto_increment ok here? 
         ServiceStart DATE NOT NULL,
-        AcctID INT UNSIGNED NOT NULL,
+        AccID INT UNSIGNED NOT NULL,
         SubID INT UNSIGNED NOT NULL,
         PaymentID INT UNSIGNED NOT NULL,
         PurchaseAmount DECIMAL (4, 2) NOT NULL,
         PRIMARY KEY (Id),
-        FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        FOREIGN KEY (AccID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (SubID) REFERENCES Subscription_Type(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (PaymentID) REFERENCES Payment_Method(Id) ON UPDATE CASCADE ON DELETE CASCADE
     );
@@ -51,10 +51,10 @@ CREATE TABLE Profile
     (
         Id INT UNSIGNED NOT NULL auto_increment,
         Name VARCHAR(255) NOT NULL,
-        AcctID INT UNSIGNED NOT NULL,
+        AccID INT UNSIGNED NOT NULL,
         PRIMARY KEY (Id),
-        FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
-        UNIQUE KEY (AcctID, Name)
+        FOREIGN KEY (AccID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        UNIQUE KEY (AccID, Name)
     );
 CREATE TABLE Movie
     (
@@ -103,8 +103,7 @@ VALUES (NULL, "ziiasxdb@imgof.com", "Tahani", "Moe", "8164589215", "Ap #735-4347
 INSERT INTO User_Account (Id, Email, FirstName, LastName, Phone, StreetAddress, City, State, Zip, Salt, Hash)
 VALUES (NULL, "zoopjcym@abyssmail.com", "Chidi", "Ngani", "9178835792", "P.O. Box 130, 4895 In, St.","St. Petersburg","FL",78757, "ndenf7xy9b", SHA1("ndenf7xy9bpassword"));
 INSERT INTO User_Account (Id, Email, FirstName, LastName, Phone, StreetAddress, City, State, Zip, Salt, Hash)
-VALUES (NULL, "zdixskyj@boximail.com", "Lesley", "Knope", "5012398162", "8749 Rutrum. Avenue","Kraków","MP","1570", "vxhcujlh6d", SHA1("vxhcujlh6dpassword"));
-
+VALUES (NULL, "zdixskyj@boximail.com", "Lesley", "Knope", "5012398162", "8749 Rutrum. Avenue","Kraków","MP","1570", "vxhcujlh6d", SHA1("vxhcujlh6dpassword"));                                                                                                                                      
 
 INSERT INTO Subscription_Type (Id, Name, Screens, Price, Description)
 VALUES (NULL, "Standard", 2, 10.99, "Two screens with HD and downloads");
@@ -161,18 +160,33 @@ INSERT INTO Type_Of (MovieID, GenreID)
 VALUES (NULL, NULL);
 
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20151225, 1, 2, 1, 7.99)
+VALUES (NULL, NULL, 20151225, 1, 2, 1, 7.99);
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20130303, 2, 1, 2, 10.99)
+VALUES (NULL, NULL, 20130303, 2, 1, 2, 10.99);
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20150419, 3, 2, 3, 7.99)
+VALUES (NULL, NULL, 20150419, 3, 2, 3, 7.99);
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20181013, 4, 3, 4, 13.99)
+VALUES (NULL, NULL, 20181013, 4, 3, 4, 13.99);
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20171205, 5, 1, 5, 10.99)
+VALUES (NULL, NULL, 20171205, 5, 1, 5, 10.99);
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20160618, 6, 1, 6, 10.99)
+VALUES (NULL, NULL, 20160618, 6, 1, 6, 10.99);
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20180812, 7, 3, 7, 13.99)                                                                                                                                       
+VALUES (NULL, NULL, 20180812, 7, 3, 7, 13.99);
                                                                                                                                        
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, MosesK, 1);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, AltrecheD, 2);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, FreelonN, 3);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, ClaswellB, 4);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, MoeT, 5);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, NganiC, 6);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, KnopeL, 7);                                                                                                                                       
+
 --can do a join on people have subscription types greater than $10 and live in florida
