@@ -28,15 +28,29 @@ CREATE TABLE Payment_Method
         CreditCardNumber VARCHAR(20) NOT NULL UNIQUE,
         CVV VARCHAR(4) NOT NULL,
         ExpirationDate DATE NOT NULL,
-        AccID INT UNSIGNED NOT NULL,
+        AcctID INT UNSIGNED NOT NULL,
         PRIMARY KEY (Id),
-        FOREIGN KEY (AccID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
-        UNIQUE KEY (CreditCardNumber, AccID)
+        FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        UNIQUE KEY (CreditCardNumber, AcctID)
     );
 -- things to note, there can only be one auto_increment in each table acording to sql
     -- so if it is a foreign key that points to a primary key just dont put auto_increment
         -- because the primary key will handle the auto_increment
 -- invoice table here = kim
+CREATE TABLE Invoice
+    (
+        Id INT UNISIGNED NOT NULL auto_increment,
+        InvoiceID INT UNSIGNED NOT NULL UNIQUE,
+        ServiceStart DATE NOT NULL,
+        AcctID INT UNSIGNED NOT NULL,
+        SubID INT UNSIGNED NOT NULL,
+        PaymentID INT UNSIGNED NOT NULL,
+        PurchaseAmount DECIMAL (6, 2) NOT NULL,
+        PRIMARY KEY (Id),
+        FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        FOREIGN KEY (SubID) REFERENCES Subscription_Type(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        FOREIGN KEY (PaymentID) REFERENCES Payment_Method(Id) ON UPDATE CASCADE ON DELETE CASCADE
+    );
 -- profile table here = kim
 -- movie table here  = kim
 CREATE TABLE Genre
