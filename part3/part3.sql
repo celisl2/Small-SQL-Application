@@ -59,7 +59,16 @@ CREATE TABLE Profile
         FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         UNIQUE KEY (AcctID, Name)
     );
--- movie table here  = kim
+CREATE TABLE Movie
+    (
+        Id INT UNSIGNED NOT NULL auto_increment,
+        Name VARCHAR(255) NOT NULL,
+        YearReleased SMALLINT(4) NOT NULL,
+        RunTime SMALLINT (3) NOT NULL,
+        Description MEDIUMTEXT,
+        PRIMARY KEY (Id),
+        UNIQUE KEY (Name, YearReleased)
+    );
 CREATE TABLE Genre
     (
         Id INT UNSIGNED NOT NULL auto_increment,
