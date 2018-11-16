@@ -33,9 +33,6 @@ CREATE TABLE Payment_Method
         FOREIGN KEY (AcctID) REFERENCES User_Account(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         UNIQUE KEY (CreditCardNumber, AcctID)
     );
--- things to note, there can only be one auto_increment in each table acording to sql
-    -- so if it is a foreign key that points to a primary key just dont put auto_increment
-        -- because the primary key will handle the auto_increment
 CREATE TABLE Invoice
     (
         Id INT UNISIGNED NOT NULL auto_increment,
@@ -83,7 +80,15 @@ CREATE TABLE Type_Of
         FOREIGN KEY (MovieID) REFERENCES Movie(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (GenreID) REFERENCES Genre(Id) ON UPDATE CASCADE ON DELETE CASCADE
     );
--- views_movie table here = kim
+CREATE TABLE Views_Movie
+    (
+        MovieID INT UNSIGNED,
+        ProfileID INT UNSIGNED,
+        PercentComplete DECIMAL (5, 2) NOT NULL,
+        PRIMARY KEY (MovieID, ProfileID),
+        FOREIGN KEY (MovieID) REFERENCES Movie(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        FOREIGN KEY (ProfileID) REFERENCES Profile(Id) ON UPDATE CASCADE ON DELETE CASCADE
+    );
 -- directed_by_mov table here = kim
 -- INSERTS GO HERE
 INSERT INTO User_Account (Id, Email, FirstName, LastName, Phone, StreetAddress, City, State, Zip, Salt, Hash)
