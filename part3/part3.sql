@@ -144,6 +144,51 @@ VALUES (NULL, "6211175300693334", "442", 20270301, 6);
 INSERT INTO Payment_Method (Id, CreditCardNumber, CVV, ExpirationDate, AccID)
 VALUES (NULL, "5028379801057043", "063", 20260401, 7);
 -- can do all users with the same credit card expiration date
+                                                                                                                                       
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20151225, 1, 2, 1, 7.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20130303, 2, 1, 2, 10.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20150419, 3, 2, 3, 7.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20181013, 4, 3, 4, 13.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20171205, 5, 1, 5, 10.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20160618, 6, 1, 6, 10.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, NULL, 20180812, 7, 3, 7, 13.99);  
+                                                                                                                                       
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, MosesK, 1);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, AltrecheD, 2);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, FreelonN, 3);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, ClaswellB, 4);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, MoeT, 5);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, NganiC, 6);
+INSERT INTO Profile (Id, Name, AccID)
+VALUES (NULL, KnopeL, 7);                                                                                                                                       
+
+INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
+VALUES (1, "Mean Girls", 2004, 97, "Cadie unwittingly finds herself in the good graces of an elite group of cool students dubbed The Plastics, but Cady soon realizes how her shallow group of new friends earned this nickname.");
+INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
+VALUES (2, "Get Out", 2017, 104, "At first, Chris reads the family's overly accommodating behavior as nervous attempts to deal with their daughter's interracial relationship, but as the weekend progresses, a series of increasingly disturbing discoveries lead him to a truth that he never could have imagined.");
+INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
+VALUES (3, "The Lion King", 1994, 89, "This Disney animated feature follows the adventures of the young lion Simba, the heir of his father, Mufasa. Simba's wicked uncle, Scar, plots to usurp Mufasa's throne by luring father and son into a stampede of wildebeests. But Simba escapes, and only Mufasa is killed. Simba returns as an adult to take back his homeland from Scar with the help of his friends Timon and Pumbaa.");
+INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
+VALUES (4, "Harry Potter and the Goblet of Fire", 2005, 157, "The fourth movie in the Harry Potter franchise sees Harry returning for his fourth year at Hogwarts School of Witchcraft and Wizardry, along with his friends, Ron and Hermione. There is an upcoming tournament between the three major schools of magic, with one participant selected from each school by the Goblet of Fire. When Harry's name is drawn, even though he is not eligible and is a fourth player, he must compete in the dangerous contest.");
+INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
+VALUES (5, "Zootopia", 2016, 110, "From the largest elephant to the smallest shrew, the city of Zootopia is a mammal metropolis where various animals live and thrive. When Judy Hopps becomes the first rabbit to join the police force, she quickly learns how tough it is to enforce the law. Determined to prove herself, Judy jumps at the opportunity to solve a mysterious case. Unfortunately, that means working with Nick Wilde, a wily fox who makes her job even harder.");
+INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
+VALUES (6, "Hurricane Bianca", 2016, 84, "A teacher from New York moves to a small town in Texas and is quickly fired for being gay. He soon returns dressed as a mean lady to get revenge on the nasty townspeople.");
+INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
+VALUES (7, "Star Wars: The Last Jedi", 2017, 156, "Luke Skywalker's peaceful and solitary existence gets upended when he encounters Rey, a young woman who shows strong signs of the Force. Her desire to learn the ways of the Jedi forces Luke to make a decision that changes their lives forever. Meanwhile, Kylo Ren and General Hux lead the First Order in an all-out assault against Leia and the Resistance for supremacy of the galaxy.");                                                                                                                                                                                                                                                                              
 
 INSERT INTO Genre (Id, Genre)
 VALUES(NULL, "Horror");
@@ -174,51 +219,7 @@ INSERT INTO Type_Of (MovieID, GenreID)
 VALUES (NULL, NULL);
 INSERT INTO Type_Of (MovieID, GenreID)
 VALUES (NULL, NULL);
-
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20151225, 1, 2, 1, 7.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20130303, 2, 1, 2, 10.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20150419, 3, 2, 3, 7.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20181013, 4, 3, 4, 13.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20171205, 5, 1, 5, 10.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20160618, 6, 1, 6, 10.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20180812, 7, 3, 7, 13.99);
                                                                                                                                        
-INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, MosesK, 1);
-INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, AltrecheD, 2);
-INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, FreelonN, 3);
-INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, ClaswellB, 4);
-INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, MoeT, 5);
-INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, NganiC, 6);
-INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, KnopeL, 7);                                                                                                                                       
-
-INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
-VALUES (1, "Mean Girls", 2004, 97, "Cadie unwittingly finds herself in the good graces of an elite group of cool students dubbed The Plastics, but Cady soon realizes how her shallow group of new friends earned this nickname.");
-INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
-VALUES (2, "Get Out", 2017, 104, "At first, Chris reads the family's overly accommodating behavior as nervous attempts to deal with their daughter's interracial relationship, but as the weekend progresses, a series of increasingly disturbing discoveries lead him to a truth that he never could have imagined.");
-INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
-VALUES (3, "The Lion King", 1994, 89, "This Disney animated feature follows the adventures of the young lion Simba, the heir of his father, Mufasa. Simba's wicked uncle, Scar, plots to usurp Mufasa's throne by luring father and son into a stampede of wildebeests. But Simba escapes, and only Mufasa is killed. Simba returns as an adult to take back his homeland from Scar with the help of his friends Timon and Pumbaa.");
-INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
-VALUES (4, "Harry Potter and the Goblet of Fire", 2005, 157, "The fourth movie in the Harry Potter franchise sees Harry returning for his fourth year at Hogwarts School of Witchcraft and Wizardry, along with his friends, Ron and Hermione. There is an upcoming tournament between the three major schools of magic, with one participant selected from each school by the Goblet of Fire. When Harry's name is drawn, even though he is not eligible and is a fourth player, he must compete in the dangerous contest.");
-INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
-VALUES (5, "Zootopia", 2016, 110, "From the largest elephant to the smallest shrew, the city of Zootopia is a mammal metropolis where various animals live and thrive. When Judy Hopps becomes the first rabbit to join the police force, she quickly learns how tough it is to enforce the law. Determined to prove herself, Judy jumps at the opportunity to solve a mysterious case. Unfortunately, that means working with Nick Wilde, a wily fox who makes her job even harder.");
-INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
-VALUES (6, "Hurricane Biance", 2016, 84, "A teacher from New York moves to a small town in Texas and is quickly fired for being gay. He soon returns dressed as a mean lady to get revenge on the nasty townspeople.");
-INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
-VALUES (7, "Star Wars: The Last Jedi", 2017, 156, "Luke Skywalker's peaceful and solitary existence gets upended when he encounters Rey, a young woman who shows strong signs of the Force. Her desire to learn the ways of the Jedi forces Luke to make a decision that changes their lives forever. Meanwhile, Kylo Ren and General Hux lead the First Order in an all-out assault against Leia and the Resistance for supremacy of the galaxy.");                                                                                                                                       
 
 INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
 VALUES (1, 3, 100.00); 
@@ -233,6 +234,27 @@ VALUES (2, 2, 26.00);
 INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
 VALUES (6, 2, 100.00); 
 INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
-VALUES (7, 3, 100.00);                                                                                                                                        
+VALUES (7, 3, 100.00); 
+                                                                                                                                       
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (1, "Mark", "Waters", "M");
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (2, "Jordan", "Peele", "M"); 
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (3, "Rob", "Minkoff", "M"); 
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (4, "Roger", "Allers", "M"); 
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (5, "Mike", "Newell", "M"); 
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (6, "Byron", "Howard", "M"); 
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (7, "Rich", "Moore", "M");
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (8, "Matt", "Kugelman", "M"); 
+INSERT INTO Person (Id, FirstName, LastName, Sex) 
+VALUES (9, "Rian", "Johnson", "M"); 
+                                                                                                                                     
 --can do a join on people have subscription types greater than $10 and live in florida
 -- People that have viewed the same movie
+-- Movie that has 2 directors                                                                                                                                      
