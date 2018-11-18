@@ -203,4 +203,20 @@ INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
 VALUES (6, "Hurricane Biance", 2016, 84, "A teacher from New York moves to a small town in Texas and is quickly fired for being gay. He soon returns dressed as a mean lady to get revenge on the nasty townspeople.");
 INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
 VALUES (7, "Star Wars: The Last Jedi", 2017, 156, "Luke Skywalker's peaceful and solitary existence gets upended when he encounters Rey, a young woman who shows strong signs of the Force. Her desire to learn the ways of the Jedi forces Luke to make a decision that changes their lives forever. Meanwhile, Kylo Ren and General Hux lead the First Order in an all-out assault against Leia and the Resistance for supremacy of the galaxy.");                                                                                                                                       
+
+INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
+VALUES (1, 3, 100.00); 
+INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
+VALUES (2, 6, 65.00); 
+INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
+VALUES (3, 5, 12.00); 
+INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
+VALUES (4, 1, 98.00); 
+INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
+VALUES (2, 2, 26.00);                                                                                                                                        
+INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
+VALUES (6, 2, 100.00); 
+INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
+VALUES (7, 3, 100.00);                                                                                                                                        
 --can do a join on people have subscription types greater than $10 and live in florida
+-- People that have viewed the same movie
