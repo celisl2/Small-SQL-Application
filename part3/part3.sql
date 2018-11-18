@@ -144,7 +144,6 @@ INSERT INTO Payment_Method (Id, CreditCardNumber, CVV, ExpirationDate, AccID)
 VALUES (NULL, "6211175300693334", "442", 20270301, 6);
 INSERT INTO Payment_Method (Id, CreditCardNumber, CVV, ExpirationDate, AccID)
 VALUES (NULL, "5028379801057043", "063", 20260401, 7);
--- can do all users with the same credit card expiration date
                                                                                                                                        
 INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
 VALUES (NULL, NULL, 20151225, 1, 2, 1, 7.99);
@@ -276,4 +275,5 @@ INSERT INTO Directed_By_Mov (MovieID, PersonID)
 VALUES (7, 9);                                                                                                                                       
 --can do a join on people have subscription types greater than $10 and live in florida
 -- People that have viewed the same movie
--- Movie that has 2 directors                                                                                                                                      
+-- Movie that has 2 directors        
+-- can do all users with the same credit card expiration date                                                                                                                              
