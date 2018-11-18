@@ -89,6 +89,22 @@ CREATE TABLE Views_Movie
         FOREIGN KEY (MovieID) REFERENCES Movie(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (ProfileID) REFERENCES Profile(Id) ON UPDATE CASCADE ON DELETE CASCADE
     );
+CREATE TABLE Person
+    (
+        Id INT UNSIGNED NOT NULL auto_increment,
+        FirstName VARCHAR(255) NOT NULL,
+        LastName VARCHAR(255) NOT NULL,
+        Sex CHAR(1),
+        PRIMARY KEY (Id)
+    );
+CREATE TABLE Directed_By_Mov
+    (
+        MovieID INT UNSIGNED,
+        PersonID INT UNSIGNED,
+        PRIMARY KEY (MovieID, PersonID),
+        FOREIGN KEY (MovieID) REFERENCES Movie(Id) ON UPDATE CASCADE ON DELETE CASCADE,
+        FOREIGN KEY (Person) REFERENCES Person(Id) ON UPDATE CASCADE ON DELETE CASCADE
+    );        
 -- INSERTS GO HERE
 INSERT INTO User_Account (Id, Email, FirstName, LastName, Phone, StreetAddress, City, State, Zip, Salt, Hash)
 VALUES (NULL, "emmekemammo-4655@yopmail.com", "Kieran", "Moses", "7632135215", "1069  Cherry Tree Drive", "Jacksonville", "FL", 32204, "9c8ffcdf2b", SHA1("9c8ffcdf2bpassword"));
