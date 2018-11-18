@@ -35,8 +35,8 @@ CREATE TABLE Payment_Method
     );
 CREATE TABLE Invoice
     (
-        Id INT UNISIGNED NOT NULL auto_increment,
-        InvoiceID INT UNSIGNED NOT NULL UNIQUE auto_increment, --is auto_increment ok here? 
+        Id INT UNSIGNED NOT NULL auto_increment,
+        InvoiceID INT UNSIGNED NOT NULL UNIQUE,
         ServiceStart DATE NOT NULL,
         AccID INT UNSIGNED NOT NULL,
         SubID INT UNSIGNED NOT NULL,
@@ -103,7 +103,7 @@ CREATE TABLE Directed_By_Mov
         PersonID INT UNSIGNED,
         PRIMARY KEY (MovieID, PersonID),
         FOREIGN KEY (MovieID) REFERENCES Movie(Id) ON UPDATE CASCADE ON DELETE CASCADE,
-        FOREIGN KEY (Person) REFERENCES Person(Id) ON UPDATE CASCADE ON DELETE CASCADE
+        FOREIGN KEY (PersonID) REFERENCES Person(Id) ON UPDATE CASCADE ON DELETE CASCADE
     ); 
 
 -- INSERTS GO HERE
@@ -146,35 +146,35 @@ INSERT INTO Payment_Method (Id, CreditCardNumber, CVV, ExpirationDate, AccID)
 VALUES (NULL, "5028379801057043", "063", 20260401, 7);
 -- can do all users with the same credit card expiration date
                                                                                                                                        
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20151225, 1, 2, 1, 7.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20130303, 2, 1, 2, 10.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20150419, 3, 2, 3, 7.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20181013, 4, 3, 4, 13.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20171205, 5, 1, 5, 10.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20160618, 6, 1, 6, 10.99);
-INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AcctID, SubID, PaymentID, PurchaseAmount)
-VALUES (NULL, NULL, 20180812, 7, 3, 7, 13.99);  
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AccID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, 123456, 20151225, 1, 2, 1, 7.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AccID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, 987654, 20130303, 2, 1, 2, 10.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AccID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, 246802, 20150419, 3, 2, 3, 7.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AccID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, 135791, 20181013, 4, 3, 4, 13.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AccID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, 030398, 20171205, 5, 1, 5, 10.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AccID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, 120592, 20160618, 6, 1, 6, 10.99);
+INSERT INTO Invoice (Id, InvoiceID, ServiceStart, AccID, SubID, PaymentID, PurchaseAmount)
+VALUES (NULL, 061864, 20180812, 7, 3, 7, 13.99);  
                                                                                                                                        
 INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, MosesK, 1);
+VALUES (NULL, "MosesK", 1);
 INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, AltrecheD, 2);
+VALUES (NULL, "AltrecheD", 2);
 INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, FreelonN, 3);
+VALUES (NULL, "FreelonN", 3);
 INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, ClaswellB, 4);
+VALUES (NULL, "ClaswellB", 4);
 INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, MoeT, 5);
+VALUES (NULL, "MoeT", 5);
 INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, NganiC, 6);
+VALUES (NULL, "NganiC", 6);
 INSERT INTO Profile (Id, Name, AccID)
-VALUES (NULL, KnopeL, 7);                                                                                                                                       
+VALUES (NULL, "KnopeL", 7);                                                                                                                                       
 
 INSERT INTO Movie (Id, Name, YearReleased, RunTime, Description)
 VALUES (1, "Mean Girls", 2004, 97, "Cadie unwittingly finds herself in the good graces of an elite group of cool students dubbed The Plastics, but Cady soon realizes how her shallow group of new friends earned this nickname.");
@@ -207,19 +207,19 @@ INSERT INTO Genre (Id, Genre)
 VALUES(NULL, "Adventure");
 
 INSERT INTO Type_Of (MovieID, GenreID)
-VALUES (NULL, NULL);
+VALUES (1, 2);
 INSERT INTO Type_Of (MovieID, GenreID)
-VALUES (NULL, NULL);
+VALUES (2, 6);
 INSERT INTO Type_Of (MovieID, GenreID)
-VALUES (NULL, NULL);
+VALUES (3, 7);
 INSERT INTO Type_Of (MovieID, GenreID)
-VALUES (NULL, NULL);
+VALUES (4, 6);
 INSERT INTO Type_Of (MovieID, GenreID)
-VALUES (NULL, NULL);
+VALUES (5, 7);
 INSERT INTO Type_Of (MovieID, GenreID)
-VALUES (NULL, NULL);
+VALUES (6, 5);
 INSERT INTO Type_Of (MovieID, GenreID)
-VALUES (NULL, NULL);
+VALUES (7, 4);
                                                                                                                                        
 
 INSERT INTO Views_Movie (MovieID, ProfileID, PercentComplete) 
