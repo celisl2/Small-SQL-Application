@@ -104,7 +104,8 @@ CREATE TABLE Directed_By_Mov
         PRIMARY KEY (MovieID, PersonID),
         FOREIGN KEY (MovieID) REFERENCES Movie(Id) ON UPDATE CASCADE ON DELETE CASCADE,
         FOREIGN KEY (Person) REFERENCES Person(Id) ON UPDATE CASCADE ON DELETE CASCADE
-    );        
+    ); 
+
 -- INSERTS GO HERE
 INSERT INTO User_Account (Id, Email, FirstName, LastName, Phone, StreetAddress, City, State, Zip, Salt, Hash)
 VALUES (NULL, "emmekemammo-4655@yopmail.com", "Kieran", "Moses", "7632135215", "1069  Cherry Tree Drive", "Jacksonville", "FL", 32204, "9c8ffcdf2b", SHA1("9c8ffcdf2bpassword"));
@@ -254,7 +255,25 @@ INSERT INTO Person (Id, FirstName, LastName, Sex)
 VALUES (8, "Matt", "Kugelman", "M"); 
 INSERT INTO Person (Id, FirstName, LastName, Sex) 
 VALUES (9, "Rian", "Johnson", "M"); 
-                                                                                                                                     
+
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (1, 1);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (2, 2);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (3, 3);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (3, 4);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (4, 5);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (5, 6);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (5, 7);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (6, 8);
+INSERT INTO Directed_By_Mov (MovieID, PersonID)
+VALUES (7, 9);                                                                                                                                       
 --can do a join on people have subscription types greater than $10 and live in florida
 -- People that have viewed the same movie
 -- Movie that has 2 directors                                                                                                                                      
