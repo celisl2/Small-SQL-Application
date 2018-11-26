@@ -17,5 +17,5 @@ $connection = mysqli_connect($server, $usr, $pss, $dbName);
 if(!$connection)
    die('did not connect');
 else 
-   echo "Connection Successfull";
+   echo "Connection Successful";
 
