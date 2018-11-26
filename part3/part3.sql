@@ -286,6 +286,12 @@ SELECT User_Account.City, Payment_Method.ExpirationDate FROM User_Account RIGHT 
 ON User_Account.Id = Payment_Method.AccID
 INNER JOIN (SELECT ExpirationDate, count(*) FROM Payment_Method GROUP BY ExpirationDate HAVING count(*) > 1) AS T
 ON Payment_Method.ExpirationDate = T.ExpirationDate ORDER BY User_Account.City ASC;
-
--- People that have viewed the same movie
--- Movie that has 2 directors 
+-- Question: Name the profiles that have viewed Get Out
+SELECT Movie.Name, Profile.Name AS ViewedBy 
+FROM Profile RIGHT JOIN Views_Movie ON Profile.Id = Views_Movie.ProfileID 
+RIGHT JOIN Movie ON Movie.Id = Views_Movie.MovieID 
+WHERE Movie.Id = 2 ORDER BY ViewedBy ASC;                                                                                                                              
+-- QUestion: Name the Movies that have more than 1 director
+SELECT Name, count(*) AS Num_Of_Directors FROM Movie
+RIGHT JOIN Directed_By_Mov ON Movie.Id = Directed_By_Mov.MovieID 
+GROUP BY Name HAVING Num_Of_Directors >1;                                                                                                                                       
