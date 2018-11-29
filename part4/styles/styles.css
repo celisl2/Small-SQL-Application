@@ -1,0 +1,82 @@
+ * {
+    font-family: 'Roboto', sans-serif;
+ }
+
+ .insertUser {
+    border: 1px solid #112F41;
+ }
+h1{
+    clear: both;
+    text-align: center;
+}
+.insertUser {
+    margin: 5%;
+}
+.insertUser form{
+    position: relative;
+    display: inline-block;
+}
+.insertUser label {
+    float: left;
+    padding: 2%;
+    width: 200px;
+}
+.insertUser input {
+    clear: both;
+    float: right;
+    width: 300px;
+    display: inline;
+}
+.insertUser button{
+    clear: both;
+    float: right;
+    margin: 2%;
+    padding: 2%;
+    width: 20%;
+    border: none;
+    background-color: #006666;
+    color: #fff;
+}
+.insertUser {
+    display: grid;
+    padding: 1%;
+    width: 55%;
+  justify-items: center;
+  margin: auto;
+}
+table {
+    margin-top: 3%;
+    border-collapse: collapse;
+    width: 90%;
+    margin: 3%;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+table td  {
+    font-weight: 300;
+}
+table tr:nth-child(even){
+    background-color: #FCFAF2;
+}
+table button {
+    border: none;
+    background-color: #006666;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    background-color: #0073aa;
+    color: #fff;
+    border: 2px solid #004566;
+    padding: 3%;
+    margin: 3%;
+    margin-top: 60px;
+    float: right;
+
+}
+.kim {
+    background-color: #004566;
+    border: 2px solid #0073aa;
+}

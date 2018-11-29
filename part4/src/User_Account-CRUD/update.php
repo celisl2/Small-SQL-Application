@@ -9,11 +9,17 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 <head>
     <meta charset="UTF-8">
     <title>Laura & Kim - Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../../styles/styles.css">
 </head>
 <html>
     <body>
-    <div class="homeL"><a href="index.php">Back Home</a></div>
-    <div class="updateUser">
+    <div class="homeL">
+        <a href="../../public/index.php"> << Back to User Insert</a>
+    </div>    
+        <a class="kim" href="#">CRUD Genre</a>
+    
+    <div class="insertUser">
 		<h1>Update Feilds</h1>
 		<form action="update.php" method="POST">
 			<label>ID of User to Update</label>
@@ -43,48 +49,48 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 if(mysqli_num_rows($sqlCheck) == 1)
                     $id = $_POST['IDUpdate'];
                 else
-                    header("Location: index.php");
+                    header("Location: ../../public/index.php");
             }
             
             if( ($_POST['feildUpdate'] == "First Name") || ($_POST['feildUpdate'] == "first name") || ($_POST['feildUpdate'] == "FirstName"))
             {
                 $feild = 'FirstName';
-                $value = '"'. $_POST['valueUpdate'] . '"';
+                $value = '"'. mysqli_real_escape_string($connection, $_POST['valueUpdate']) . '"';
             }
             else if(($_POST['feildUpdate'] == 'email') || ($_POST['feildUpdate'] == 'Email'))
             {
                 $feild = 'Email';
-                $value = '"'. $_POST['valueUpdate'] . '"';
+                $value = '"'. mysqli_real_escape_string($connection, $_POST['valueUpdate']) . '"';
             }
             else if(($_POST['feildUpdate'] == 'LastName') || ($_POST['feildUpdate'] == 'last name') || ($_POST['feildUpdate'] == 'Last Name'))
             {
                 $feild = 'LastName';
-                $value = '"'. $_POST['valueUpdate'] . '"';
+                $value = '"'. mysqli_real_escape_string($connection, $_POST['valueUpdate']) . '"';
             }
             else if(($_POST['feildUpdate'] == 'Phone') || ($_POST['feildUpdate'] == 'phone'))
             {
                 $feild = 'Phone';
-                $value = '"'. $_POST['valueUpdate'] . '"';
+                $value = '"'. mysqli_real_escape_string($connection, $_POST['valueUpdate']) . '"';
             }
             else if(($_POST['feildUpdate'] == 'StreetAddress') || ($_POST['feildUpdate'] == 'Street Address') || ($_POST['feildUpdate'] == 'street address'))
             {
                 $feild = 'StreetAddress';
-                $value = '"'. $_POST['valueUpdate'] . '"';
+                $value = '"'. mysqli_real_escape_string($connection, $_POST['valueUpdate']) . '"';
             }
             else if(($_POST['feildUpdate'] == 'City') || ($_POST['feildUpdate'] == 'city'))
             {
                 $feild = 'City';
-                $value = '"'. $_POST['valueUpdate'] . '"';
+                $value = '"'. mysqli_real_escape_string($connection, $_POST['valueUpdate']) . '"';
             }
             else if(($_POST['feildUpdate'] == 'State') || ($_POST['feildUpdate'] == 'state'))
             {
                 $feild = 'State';
-                $value = '"'. $_POST['valueUpdate'] . '"';
+                $value = '"'. mysqli_real_escape_string($connection, $_POST['valueUpdate']) . '"';
             }
             else if(($_POST['feildUpdate'] == 'Zip') || ($_POST['feildUpdate'] == 'zip'))
             {
                 $feild = 'Zip';
-                $value = $_POST['valueUpdate'];
+                $value = mysqli_real_escape_string($connection, $_POST['valueUpdate']);
             }
             else {
                 header("Location: update.php");
@@ -94,6 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             //UPDATE User_Account SET State = 'FL' WHERE Id = 1;
             //build query
             $updateQuery = 'UPDATE User_Account SET ' . "$feild" . '=' . "$value WHERE Id = $id;";
+
             mysqli_query($connection, $updateQuery);
         }
         header("Location: update.php");

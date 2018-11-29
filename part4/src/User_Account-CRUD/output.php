@@ -16,8 +16,6 @@ if($resultCheck > 0 )
         echo "<th>City </th>";
         echo "<th>State </th>";
         echo "<th>Zip </th>";
-        echo "<th>Salt </th>";
-        echo "<th>Hash </th>";
     echo "</tr>";
     //outputs data from sql
     while($row = mysqli_fetch_row($results))
@@ -32,8 +30,14 @@ if($resultCheck > 0 )
             echo "<td>" . $row[6] . "</td>";
             echo "<td>" . $row[7] . "</td>";
             echo "<td>" . $row[8] . "</td>";
-            echo "<td>" . $row[9] . "</td>";
-            echo "<td>" . $row[10] . "</td>";
+            ?>
+            <td> 
+            <form method="POST" action="index.php">
+                    <input type="hidden" name="delete" value="<?php echo $row[0]; ?>">
+                    <button type="submit">Delete User</button>
+                </form>
+            </td>
+            <?php
         echo "</tr>";
     }
 }
