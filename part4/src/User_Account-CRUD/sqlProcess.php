@@ -23,5 +23,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $fullQuery = (string)($insert . $values);
         $addQuery = mysqli_query($connection, $fullQuery);
    }
-   header("Location: index.php");
+   header("Location: ../../public/index.php");
 }

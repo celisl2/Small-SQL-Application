@@ -1,6 +1,5 @@
 <?php
 require_once('../src/User_Account-CRUD/connect.php');
-require_once('../src/Movie-CRUD/connect_movie.php');
 if($_SERVER["REQUEST_METHOD"] == "GET")
 { 
 ?>

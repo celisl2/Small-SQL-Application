@@ -55,9 +55,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	else
 		require_once('SQL_Movie.php');
 }
-if($message)
-	echo "Success!";
-else
-	echo $message;
+
 mysqli_close($connection_movie);
 ?>
