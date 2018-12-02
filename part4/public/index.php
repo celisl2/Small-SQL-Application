@@ -1,5 +1,6 @@
 <?php
 require_once('../src/User_Account-CRUD/connect.php');
+require_once('../src/Movie-CRUD/connect_movie.php');
 if($_SERVER["REQUEST_METHOD"] == "GET")
 { 
 ?>
@@ -13,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 </head>
 <body>
 	<a href="../src/User_Account-CRUD/update.php">Update User Information >> </a>
-	<a class="kim" href="#">CRUD Genre</a>
+	<a class="kim" href="../src/Movie-CRUD/insert_movie.php">Go to Movie Insert >> </a>
 	<h1>Insert User</h1>
 	<div class="insertUser">
 		<form method="POST" action="../src/User_Account-CRUD/sqlProcess.php" >
