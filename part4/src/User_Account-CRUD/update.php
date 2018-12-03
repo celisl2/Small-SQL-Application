@@ -1,6 +1,7 @@
 <?php
 //update handles
 require_once('connect.php');
+require_once('../Movie-CRUD/connect_movie.php');
 if($_SERVER["REQUEST_METHOD"] == "GET")
 {
 ?>
@@ -17,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
     <div class="homeL">
         <a href="../../public/index.php"> << Back to User Insert</a>
     </div>    
-        <a class="kim" href="#">CRUD Genre</a>
+        <a class="kim" href="../Movie-CRUD/insert_movie.php">Go to Movie Insert >> </a>
     
     <div class="insertUser">
 		<h1>Update Feilds</h1>
