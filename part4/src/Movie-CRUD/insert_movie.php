@@ -15,13 +15,13 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
 <html>
     <body>
     <a href="../../public/index.php"> << Back to User Insert</a>
-    <a class="kim" href="movie_update.php">Movie Update</a>
+    <a class="kim" href="movie_update.php">Go to Movie Update >> </a>
     <h1>Insert Movie</h1>
     <div class="insertUser">
 		<form method="POST" action="SQL_movie.php" >
             <div class="input-group">
 			    <label>Movie Name</label>
-			    <input type="text" name="movieName" value="">
+			    <input type="text" name="Name" value="">
             </div>
             <div class="input-group">
 			    <label>Year Released</label>
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET")
         </form>
     </div>
 <?php
-	require_once('display.php');
+    require_once('display.php');
 }
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		header("Location: insert_movie.php");
 	}
 	else
-		require_once('SQL_Movie.php');
+		require_once('SQL_movie.php');
 }
 
 mysqli_close($connection_movie);
